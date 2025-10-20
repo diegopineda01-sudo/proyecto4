@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.formTable {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  height: 100%;
+  margin-top: 5px;
+}
+
+.Account {
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: 100%;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.Contenidos {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.Contenidos label {
+  padding-bottom: 5px;
+}
+
+.Contenidos input {
+  padding: 11px;
+  border-radius: 1px;
+  border: 1px solid;
+}
+
+.selectEstilo{
+  border: 1px solid black;
+  padding: 9px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.selectEstilo #flag {
+  width: 30px;
+  height: 19px;
+}
+
+.Contenidos select {
+  width: 90%;
+  border: 0px; 
+
+}
+
+.boton {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.boton button {
+  background-color: gray;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  width: 80%;
+  border: 0px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #1886FB;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.Caja{
+  width: 80%;
+}

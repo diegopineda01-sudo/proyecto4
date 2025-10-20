@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css">
+  <title>proyecto4</title>
+</head>
+
+<body>
+  <main>
+    <form class="formTable" id="miFormulario" action="result.html">
+      <div class="Account">
+        Create Account
+      </div>
+      <div class="Contenidos">
+        <label for="fullName">Full Name</label>
+        <input type="text" name="fullName" id="fullName">
+      </div>
+      <div class="Contenidos">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <div class="Contenidos">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <div class="Contenidos">
+        <label for="re-Password">Re-Password</label>
+        <input type="password" name="re-Password" id="re-Password">
+      </div>
+      <div class="Contenidos">
+        <label for="country">Select Country</label>
+        <div class="selectEstilo">
+          <select id="country">
+            <option value="nada">Select your country</option>
+            <option value="ar">Argentina</option>
+            <option value="pe">Peru</option>
+            <option value="mx">Mexico</option>
+            <option value="sv">El Salvador</option>
+            <option value="cl">Chile</option>
+            <option value="uy">Uruguay</option>
+            <option value="py">Paraguay</option>
+            <option value="pa">Panamá</option>
+            <option value="ve">Venezuela</option>
+            <option value="es">España</option>
+            <option value="ni">Nicaragua</option>
+            <option value="cr">Costa Rica</option>
+            <option value="bo">Bolivia</option>
+            <option value="pr">Puerto Rico</option>
+            <option value="us">Estados Unidos</option>
+            <option value="hn">Honduras</option>
+            <option value="ec">Ecuador</option>
+            <option value="br">Brasil</option>
+            <option value="do">República Dominicana</option>
+            <option value="gt">Guatemala</option>
+            <option value="co">Colombia</option>
+            <option value="ad">Andorra</option>
+            <option value="ae">Emiratos Árabes Unidos</option>
+            <option value="af">Afganistán</option>
+          </select>
+        </div>
+      </div>
+      <div class="Caja">
+        <input type="checkbox" name="rules" id="rules">
+        <label for="rules">i agree to the Rules</label>
+      </div>
+      <div class="boton">
+        <button type="submit" disabled id="submitBtn">Create Account</button>
+      </div>
+    </form>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

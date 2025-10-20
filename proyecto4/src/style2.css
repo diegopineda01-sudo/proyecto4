@@ -1,0 +1,40 @@
+body {
+    background-color: #4e9ab6
+;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    height: 100%;
+    box-shadow: 0px 0px 10px 1px black;
+    border-radius: 20px;
+    height: 100%;
+    overflow: hidden;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    table-layout: auto;
+    display: block;
+}
+
+th {
+    border: 1px solid;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+
+tr,
+td {
+    border: 1px solid black;
+    padding: 20px;
+    
+}

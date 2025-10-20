@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style2.css">
+    <title>result</title>
+</head>
+
+<body>
+    <main>
+        <div class="Bienvenida">
+            <h1>¡Formulario Recibido!</h1>
+            <p>Gracias por registrarte. Hemos recibido la siguiente información:</p>
+        </div>
+
+        <div class="tablaUsuarios"></div>
+    </main>
+    <script>
+        window.addEventListener("load", () => {
+            const parametrosURL = new URLSearchParams(window.location.search);
+
+            const nombreUsuario = parametrosURL.get('fullName');
+            const emailUsuario = parametrosURL.get('email');
+            const contraseñaUsuario = parametrosURL.get('password');
+            const paisUsuario = parametrosURL.get('country');
+
+            let tabla = document.querySelector(".tablaUsuarios")
+
+            let tablaCuerpo = document.createElement("table")
+
+            //primer tr
+
+            const tr1 = document.createElement("tr")
+
+            let th1 = document.createElement("th")
+
+            th1.textContent = "Nombre"
+
+            const td1 = document.createElement("td")
+
+            td1.textContent = nombreUsuario
+
+            tr1.append(th1, td1)
+
+            //segundo tr
+
+            const tr2 = document.createElement("tr")
+
+            let th2 = document.createElement("th")
+
+            th2.textContent = "E-mail"
+
+            const td2 = document.createElement("td")
+
+            td2.textContent = emailUsuario
+
+            tr2.append(th2, td2)
+
+            //tercer tr
+            
+            const tr3 = document.createElement("tr")
+
+            let th3 = document.createElement("th")
+
+            th3.textContent = "Password"
+
+            const td3 = document.createElement("td")
+
+            td3.textContent = contraseñaUsuario
+
+            tr3.append(th3, td3)
+
+            //cuarto tr
+
+            const tr4 = document.createElement("tr")
+
+            let th4 = document.createElement("th")
+
+            th4.textContent = "Country"
+
+            const td4 = document.createElement("td")
+
+            td4.textContent = paisUsuario
+
+            tr4.append(th4,td4)
+
+            tablaCuerpo.append(tr1,tr2,tr3,tr4)
+
+            tabla.appendChild(tablaCuerpo)
+
+        })
+    </script>
+</body>
+
+</html>
