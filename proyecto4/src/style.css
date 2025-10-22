@@ -54,7 +54,7 @@ main {
 .custom-select {
   position: relative;
   display: inline-block;
-  width: 300px;
+  width: 100%;
   max-width: 100%;
   border-color: black;
 }
@@ -81,16 +81,12 @@ main {
 }
 
 .select-dropdown {
-  position: relative;
-  top: 100%;
-  left: 0;
   width: 100%;
   background-color: white;
   list-style: none;
   padding: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  max-height: 200px;
-  overflow-y: auto;
+  margin-top: 0px;
 }
 
 .select-dropdown li {

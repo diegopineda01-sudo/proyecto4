@@ -121,7 +121,7 @@ const countries = {
   us: "Estados Unidos"
 };
 
-const flagsPath = "img/svg/";
+const flagsPath = "/proyecto4/img/svg/";
 
 const dropdown = document.querySelector("#country-select .select-dropdown");
 const selected = document.querySelector("#country-select .selected-value");
