@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mapa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        body {
+            background-color: #F6F6F6;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            box-shadow: 0px 0px 0px 1px gray;
+            border-radius: 5px;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        .textoPrincipal {
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #map {
+            height: 90vh;
+            width: 95%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="textoPrincipal">
+            <p>Mapa </p>
+        </div>
+        <div id="map"></div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Crear el mapa centrado en Plaza Pablo Ruiz Picasso, 11
+        var map = L.map('map', {
+            center: [40.448940, -3.694370],
+            zoom: 17,
+            maxBounds: [[-90, -180], [90, 180]],
+            maxBoundsViscosity: 1.0
+        });
+
+        // Cargar tiles sin repetición
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            noWrap: true,
+            bounds: [[-90, -180], [90, 180]]
+        }).addTo(map);
+
+        // Agregar un marcador en la dirección proporcionada
+        L.marker([40.448940, -3.694370]).addTo(map)
+            .bindPopup('Plaza Pablo Ruiz Picasso, 11<br>Piso 7, Tetuán, 28020 Madrid')
+            .openPopup();
+
+        map.on('click', function (e) {
+            const latlng = e.latlng;
+
+            L.marker(latlng)
+                .addTo(map)
+                .bindPopup(`Marcador en:<br>Lat: ${latlng.lat.toFixed(5)}<br>Lng: ${latlng.lng.toFixed(5)}`)
+                .openPopup();
+        });
+
+    </script>
+</body>
+
+</html>

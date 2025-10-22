@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/stylepayment.css">
+    <title>proyecto4</title>
+</head>
+
+<main>
+    <form class="formTable" id="miFormulario" action="result.html">
+        <div class="Account">
+            <p class="firstText">Payment Settings</p>
+            <p class="secondText">Framer offers a great Starting place</p>
+        </div>
+        <div class="Contenidos">
+            <input type="text" name="accountH" id="accountH" placeholder="Account Holder">
+        </div>
+        <div class="Contenidos">
+            <input type="text" name="cardN" id="cardN" placeholder="Card Number">
+        </div>
+        <div class="Contenidos-2">
+            <input type="text" name="cvv" id="cvv" placeholder="CVV / CVC">
+            <p>The last 3 digists on back your card</p>
+        </div>
+        <div class="Contenidos">
+            <div class="selectEstilo">
+                <select id="month">
+                    <option value="null">Month</option>
+                    <option value="enero">Enero</option>
+                    <option value="febrero">Febrero</option>
+                    <option value="marzo">Marzo</option>
+                    <option value="abril">Abril</option>
+                    <option value="mayo">Mayo</option>
+                    <option value="junio">Junio</option>
+                    <option value="julio">Julio</option>
+                    <option value="agosto">Agosto</option>
+                    <option value="septiembre">Septiembre</option>
+                    <option value="octubre">Octubre</option>
+                    <option value="noviembre">Noviembre</option>
+                    <option value="diciembre">Diciembre</option>
+                </select>
+                <select id="year">
+                    <option value="null">Year</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+            </div>
+        </div>
+        <div class="Caja">
+            <input type="checkbox" name="rules" id="rules">
+            <label for="rules">Remember my payment information</label>
+        </div>
+        <div class="boton">
+            <button type="submit" disabled id="submitBtn">Create Account</button>
+        </div>
+    </form>
+</main>
+<script>
+    let accountName = false;
+    let numberCard = false;
+    let cCv = false;
+    let checkboxMarcado = false;
+
+    //nombre
+
+    let accountH = document.getElementById("accountH")
+
+    let regexNombre = /^[a-zA-ZÀ-ÿ\s]{1,50}$/
+
+    accountH.addEventListener("input", () => {
+        let contenido = accountH.value;
+        accountH.value = contenido.toUpperCase()
+
+        if (regexNombre.test(contenido)) {
+            accountH.style.borderColor = "#62e47c";
+            accountName = true;
+        } else {
+            accountH.style.borderColor = "red";
+            accountName = false;
+        }
+
+        if (contenido === "") {
+            accountH.style.borderColor = "";
+            accountName = false;
+        }
+    })
+
+    //Numero de Tarjeta
+
+    let cardN = document.getElementById("cardN")
+
+    let regexcardN = /^[\d\s\-\.]{13,19}$/
+
+    cardN.addEventListener("input", () => {
+        let contenido = cardN.value.trim();
+        console.log(cardN.value)
+
+        if (cardN === "") {
+            cardN.style.borderColor = "";
+            numberCard = false;
+        }
+        else if (regexcardN.test(contenido)) {
+            cardN.style.borderColor = "green";
+            numberCard = true;
+        } else {
+            cardN.style.borderColor = "red";
+            numberCard = false;
+        }
+
+    })
+
+    //CVV
+
+    let ccV = document.getElementById("cvv")
+
+    let regXcvv = /\d{3,4}/
+
+    ccV.addEventListener("input", () => {
+        let contenido = ccV.value;
+
+        if (regXcvv.test(contenido)) {
+            ccV.style.borderColor = "#62e47c";
+            cCv = true;
+        } else {
+            ccV.style.borderColor = "red";
+            cCv = false;
+        }
+
+        if (ccV === "") {
+            ccV.style.borderColor = "";
+            cCv = false;
+        }
+    })
+
+    const inputCheckbox = document.getElementById("rules");
+
+    inputCheckbox.addEventListener("change", () => {
+        checkboxMarcado = inputCheckbox.checked;
+        validarFormulario();
+    });
+
+    function validarFormulario() {
+        const boton = document.getElementById("submitBtn");
+        if (accountName && numberCard && cCv && checkboxMarcado) {
+            boton.disabled = false;
+            boton.style.backgroundColor = "#1886FB"
+        } else {
+            boton.disabled = true;
+        }
+    }
+
+</script>
+</body>
+
+</html>

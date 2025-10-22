@@ -17,7 +17,7 @@ main {
 }
 
 .formTable {
-  background-color: #FFFFFF;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +25,7 @@ main {
   padding-bottom: 40px;
   box-sizing: border-box;
   height: 100%;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .Account {
@@ -37,7 +37,7 @@ main {
 }
 
 .Contenidos {
-  margin: 15px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -48,28 +48,75 @@ main {
 }
 
 .Contenidos input {
-  padding: 11px;
-  border-radius: 1px;
-  border: 1px solid;
+  padding: 10px;
 }
 
-.selectEstilo{
-  border: 1px solid black;
-  padding: 9px;
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  max-width: 100%;
+  border-color: black;
+}
+
+.select-button {
+  font-size: 15px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.675em 1em;
+  border: 1px solid #caced1;
+  border-radius: 0.25rem;
+  background-color: white;
+  cursor: pointer;
+  border-color: black;
 }
 
-.selectEstilo #flag {
-  width: 30px;
-  height: 19px;
+.arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #000;
+  transition: transform ease-in-out 0.3s;
 }
 
-.Contenidos select {
-  width: 90%;
-  border: 0px; 
+.select-dropdown {
+  position: relative;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  list-style: none;
+  padding: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+}
 
+.select-dropdown li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.select-dropdown li.selected {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.select-dropdown li:hover,
+.select-dropdown li:focus {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.banderas {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
 }
 
 .boton {
@@ -90,8 +137,12 @@ main {
   border: 0px;
 }
 
+.Caja{
+  width: 80%;
+}
+
 input:focus,
-textarea:focus {
+textarea:focus,.select-dropdown:focus {
   outline: none;
   box-shadow: 0 0 5px 2px #1886FB;
 }
@@ -101,6 +152,3 @@ select:focus {
   box-shadow: none;
 }
 
-.Caja{
-  width: 80%;
-}

@@ -1,4 +1,3 @@
-
 let nombreValido = false;
 let emailValido = false;
 let contraseñaValida = false;
@@ -114,60 +113,47 @@ function validarFormulario() {
   }
 }
 
-const flagspath = {
-  ar: 'img/svg/ar.svg',
-  pe: 'img/svg/pe.svg',
-  mx: 'img/svg/mx.svg',
-  sv: 'img/svg/sv.svg',
-  cl: 'img/svg/cl.svg',
-  uy: 'img/svg/uy.svg',
-  py: 'img/svg/py.svg',
-  pa: 'img/svg/pa.svg',
-  ve: 'img/svg/ve.svg',
-  es: 'img/svg/es.svg',
-  ni: 'img/svg/ni.svg',
-  cr: 'img/svg/cr.svg',
-  bo: 'img/svg/bo.svg',
-  pr: 'img/svg/pr.svg',
-  us: 'img/svg/us.svg',
-  hn: 'img/svg/hn.svg',
-  ec: 'img/svg/ec.svg',
-  br: 'img/svg/br.svg',
-  do: 'img/svg/do.svg',
-  gt: 'img/svg/gt.svg',
-  co: 'img/svg/co.svg',
-  ad: 'img/svg/ad.svg',
-  ae: 'img/svg/ae.svg',
-  af: 'img/svg/af.svg'
+const countries = {
+  ar: "Argentina",
+  pe: "Perú",
+  mx: "México",
+  es: "España",
+  us: "Estados Unidos"
 };
 
-const selectCountry = document.getElementById("country");
+const flagsPath = "img/svg/";
 
-let divSelect = document.querySelector(".selectEstilo")
+const dropdown = document.querySelector("#country-select .select-dropdown");
+const selected = document.querySelector("#country-select .selected-value");
 
-selectCountry.addEventListener("change", () => {
-  let flagImg = document.createElement("img")
-  flagImg.id = "flag"
-
-  const existingImg = document.querySelector("img")
-
-  if(existingImg){
-    divSelect.removeChild(existingImg)
-  }
-
-  const selectedValue = selectCountry.value;
-  if (flagspath[selectedValue]) {
-    flagImg.src = flagspath[selectedValue];
-    flagImg.style.display = "inline-block"; // mostrar si hay bandera
-  } else {
-    flagImg.src = "";
-    flagImg.style.display = "none"; // ocultar si no hay país seleccionado
-  }
-
-  divSelect.insertBefore(flagImg,selectCountry)
+Object.entries(countries).forEach(([code, name]) => {
+  const li = document.createElement("li");
+  const img = document.createElement("img")
+  img.src = flagsPath + code + ".svg"
+  img.className = "banderas"
+  li.append(img,document.createTextNode(name)) ;
+  li.setAttribute("data-value", code);
+  dropdown.appendChild(li);
 });
 
+dropdown.addEventListener("click", (e) => {
+  if (e.target.closest("li")) {
+    const li = e.target.closest("li");
+    selected.innerHTML = li.innerHTML;
+    selected.setAttribute("data-selected", li.dataset.value);
+    dropdown.classList.add("hidden");
+  }
+});
 
+const customSelects = document.querySelectorAll(".custom-select");
+customSelects.forEach((customSelect) => {
+  const selectButton = customSelect.querySelector(".select-button");
+  const dropdown = customSelect.querySelector(".select-dropdown");
+
+  selectButton.addEventListener("click", () => {
+    dropdown.classList.toggle("hidden");
+  });
+});
 
 let form = document.getElementById("miFormulario")
 
@@ -176,7 +162,7 @@ form.addEventListener("submit", function (e) {
   const nombre = document.getElementById("fullName").value
   const email = document.getElementById("email").value
   const password = document.getElementById("password").value
-  const pais = document.getElementById("country").value
+  const pais = document.querySelector("")
 
   let datos = {
     nombre: nombre,
