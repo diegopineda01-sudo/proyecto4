@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/proyecto4/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>proyecto4</title>
+  <script type="module" crossorigin src="/proyecto4/assets/main-DfnoXSgs.js"></script>
+  <link rel="stylesheet" crossorigin href="/proyecto4/assets/main-B8eR0ZsI.css">
+</head>
+
+<body>
+  <main>
+    <form class="formTable" id="miFormulario" action="result.html">
+      <div class="Account">
+        Create Account
+      </div>
+      <div class="Contenidos">
+        <label for="fullName">Full Name</label>
+        <input type="text" name="fullName" id="fullName">
+      </div>
+      <div class="Contenidos">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <div class="Contenidos">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <div class="Contenidos">
+        <label for="re-Password">Re-Password</label>
+        <input type="password" name="re-Password" id="re-Password">
+      </div>
+      <div class="Contenidos">
+        <label for="country">Select Country</label>
+        <div class="custom-select" id="country-select">
+          <button class="select-button" type="button">
+            <span class="selected-value">Select a country</span>
+            <span class="arrow"></span>
+          </button>
+          <ul class="select-dropdown hidden"></ul>
+        </div>
+      </div>
+      <div class="Caja">
+        <input type="checkbox" name="rules" id="rules">
+        <label for="rules">i agree to the Rules</label>
+      </div>
+      <div class="boton">
+        <button type="submit" disabled id="submitBtn">Create Account</button>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>
