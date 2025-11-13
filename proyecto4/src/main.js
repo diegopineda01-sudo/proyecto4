@@ -121,20 +121,21 @@ const countries = {
   us: "Estados Unidos"
 };
 
-const flagsPath = "/proyecto4/img/svg/";
-
 const dropdown = document.querySelector("#country-select .select-dropdown");
 const selected = document.querySelector("#country-select .selected-value");
 
+const flagsPath = import.meta.env.BASE_URL + 'img/svg/';
+
 Object.entries(countries).forEach(([code, name]) => {
   const li = document.createElement("li");
-  const img = document.createElement("img")
-  img.src = flagsPath + code + ".svg"
-  img.className = "banderas"
-  li.append(img,document.createTextNode(name)) ;
+  const img = document.createElement("img");
+  img.src = flagsPath + code + ".svg";
+  img.className = "banderas";
+  li.append(img, document.createTextNode(name));
   li.setAttribute("data-value", code);
   dropdown.appendChild(li);
 });
+
 
 dropdown.addEventListener("click", (e) => {
   if (e.target.closest("li")) {

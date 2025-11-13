@@ -30,21 +30,18 @@ main {
 
 .Account {
     text-align: center;
-    width: 100%;
+    width: 90%;
     font-size: 30px;
-    padding: 10px;
 }
 
 .firstText {
     font-size: 25px;
     text-align: left;
-    margin: 10px;
 }
 
 .secondText {
     font-size: 15px;
     text-align: left;
-    margin: 10px;
 }
 
 .Contenidos {
@@ -85,7 +82,7 @@ main {
 
 .selectEstilo select {
     margin: 2px;
-    width: 200px;
+    width: 100%;
     height: 37px;
     color: gray;
 }
